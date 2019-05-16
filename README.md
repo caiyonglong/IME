@@ -1,17 +1,37 @@
+# Google 输入法源码
 
+基于Android 源码 **android-9.0.0_r39** tag节点，下载相关tgz压缩包，将源码移植到 AS 工程里面。已编译运行成功！
 
-Google 输入法源码地址
-https://android.googlesource.com/platform/packages/inputmethods/LatinIME/+/refs/tags/android-9.0.0_r39
+# 源码地址
+platform/packages/inputmethods/LatinIME
+
+[https://android.googlesource.com/platform/packages/inputmethods/LatinIME/+/refs/tags/android-9.0.0_r39](https://android.googlesource.com/platform/packages/inputmethods/LatinIME/+/refs/tags/android-9.0.0_r39)
+
+![](./picture/15580099725696.png)
 
 其中 com.android.inputmethod.latin.settings.SettingsFragment 需要导入
 
 ```aidl
 import com.android.inputmethodcommon.InputMethodSettingsFragment;
 ```
-inputmethodcommon
-在 https://android.googlesource.com/platform/frameworks/opt/inputmethodcommon/+/refs/tags/android-9.0.0_r39
+platform/frameworks/opt/inputmethodcommon
+
+具体地址： [https://android.googlesource.com/platform/frameworks/opt/inputmethodcommon/+/refs/tags/android-9.0.0_r39](https://android.googlesource.com/platform/frameworks/opt/inputmethodcommon/+/refs/tags/android-9.0.0_r39)
+
+](https://android.googlesource.com/platform/packages/inputmethods/LatinIME/+/refs/tags/android-9.0.0_r39)
+
+![](./picture/15580100143852.png)
+
+
+运行效果预览
+
+![](./picture/setup_welcome_image.png)
+![](./picture/setup_welcome_video.mp4)
+
+注：在Android Studio编辑器中，因为编辑器问题，资源文件声明没有识别，所有以下文件提示找不到，但实际上能够还是能直接**编译生成apk文件**
 
 EmojiCategory
+
 ```
     private static final int[] sCategoryTabIconAttr = {
             R.styleable.EmojiPalettesView_iconEmojiRecentsTab,
@@ -35,7 +55,6 @@ EmojiCategory
 GestureStrokeRecognitionParams
 
 ```
-
     public GestureStrokeRecognitionParams(final TypedArray mainKeyboardViewAttr) {
         mStaticTimeThresholdAfterFastTyping = mainKeyboardViewAttr.getInt(
                 R.styleable.MainKeyboardView_gestureStaticTimeThresholdAfterFastTyping,
@@ -68,4 +87,5 @@ GestureStrokeRecognitionParams
                 R.styleable.MainKeyboardView_gestureRecognitionSpeedThreshold,
                 DEFAULT.mRecognitionSpeedThreshold);
     }
+    
 ```
